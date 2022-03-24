@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>document</title>
+</head>
+<body>
+<div class="container">
+    <form>
+        {% csrf_token %}
+    <div>
+        <input id="first">
+        <input id="second">
+    </div>
+    <div>
+        <button name="button" data-href="{% url 'add' %}" type="button">Add</button>
+        <button name="button" data-href="{% url 'substract' %}" type="button" class=>Substract</button>
+        <button name="button" data-href="{% url 'multiply' %}" type="button">Multiply</button>
+        <button name="button" data-href="{% url 'divide' %}" type="button">Divide</button>
+    </div>
+    </form>
+    <p>Answer:</p>
+    <div id="answer-field" style="max-width: 250px;">
+        <p class="answer" id="answer"></p>
+    </div>
+</div>
+<script src="{% static 'js/api.js' %}"></script>
+</body>
+</html>
